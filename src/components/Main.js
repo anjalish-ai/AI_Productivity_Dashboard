@@ -1,4 +1,5 @@
 import Tasks from "./Tasks";
+import Notes from "./Notes";
 
 function Main() {
   return (
@@ -6,6 +7,7 @@ function Main() {
       <h1>Welcome 👋</h1>
 
       <Tasks />
+      <Notes />
     </div>
   );
 }
