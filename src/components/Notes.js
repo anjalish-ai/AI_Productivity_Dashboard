@@ -4,13 +4,11 @@ function Notes() {
   const [notes, setNotes] = useState([]);
   const [input, setInput] = useState("");
 
-  // Load notes
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("notes"));
     if (saved) setNotes(saved);
   }, []);
 
-  // Save notes
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
@@ -22,26 +20,31 @@ function Notes() {
   };
 
   const deleteNote = (index) => {
-    const updated = notes.filter((_, i) => i !== index);
-    setNotes(updated);
+    setNotes(notes.filter((_, i) => i !== index));
   };
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div>
       <h2>📝 Notes</h2>
 
-      <input
+      <textarea
+        rows="3"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Write a note"
+        placeholder="Write your note..."
       />
-      <button onClick={addNote}>Add</button>
+
+      <br />
+      <button onClick={addNote}>Add Note</button>
 
       <ul>
         {notes.map((note, index) => (
-          <li key={index} style={{ marginTop: "8px" }}>
+          <li key={index}>
             {note}
-            <button onClick={() => deleteNote(index)} style={{ marginLeft: "10px" }}>
+            <button
+              onClick={() => deleteNote(index)}
+              style={{ marginLeft: "10px" }}
+            >
               ❌
             </button>
           </li>

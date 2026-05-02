@@ -1,13 +1,33 @@
+import "../App.css";
 import Tasks from "./Tasks";
 import Notes from "./Notes";
+import AISuggestions from "./AISuggestions";
+import Widgets from "./Widgets";
 
 function Main() {
-  return (
-    <div style={{ flex: 1, padding: "20px" }}>
-      <h1>Welcome 👋</h1>
+  const demoTasks = ["Study React", "Build Dashboard"];
 
-      <Tasks />
-      <Notes />
+  return (
+    <div className="main">
+      <h1 style={{ color: "#6366f1" }}>Welcome 👋</h1>
+
+      <div className="grid">
+        <div className="card">
+          <AISuggestions tasks={demoTasks} />
+        </div>
+
+        <div className="card">
+          <Tasks />
+        </div>
+
+        <div className="card">
+          <Notes />
+        </div>
+
+        <div className="card">
+          <Widgets />
+        </div>
+      </div>
     </div>
   );
 }

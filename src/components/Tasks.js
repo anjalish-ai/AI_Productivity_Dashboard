@@ -58,8 +58,10 @@ function Tasks() {
               marginTop: "8px"
             }}
           >
-            <span onClick={() => toggleTask(index)}>
-              {task.text}
+            <span
+              onClick={() => toggleTask(index)}
+              style={{ cursor: "pointer", color: "#1e293b" }}
+            >
             </span>
 
             <button onClick={() => deleteTask(index)} style={{ marginLeft: "10px" }}>
