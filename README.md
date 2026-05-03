@@ -18,3 +18,6 @@ A modern React-based productivity dashboard that combines tasks, notes, AI sugge
 
 ## 📌 Project Type
 Frontend Simulation (SaaS Dashboard)
+
+## 🌍 Live Demo
+https://ai-productivity-dashboard-ten.vercel.app/
